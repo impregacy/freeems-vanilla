@@ -83,6 +83,9 @@ const volatile fixedConfig2 fixedConfigs2 FIXEDCONF2 = {
 #elif CONFIG == DEUCES10_ID
 		MAPMinimum:    GM1BarMin,
 		MAPRange:      GM1BarRange,
+#elif CONFIG == MOAR_ID
+		MAPMinimum:    GM1BarMin,
+		MAPRange:      GM1BarRange,
 #else
 		MAPMinimum:    MPX4250AMin,
 		MAPRange:      MPX4250ARange,
@@ -95,6 +98,7 @@ const volatile fixedConfig2 fixedConfigs2 FIXEDCONF2 = {
 		AAPMinimum:    MPXA6115AMin,
 		AAPRange:      MPXA6115ARange,
 #endif
+// EGO Sensor Configuration
 #if CONFIG == SEANKLT1_ID
 		EGOMinimum:    AFR1020LambdaMin,
 		EGORange:      AFR1020LambdaRange,
@@ -105,6 +109,7 @@ const volatile fixedConfig2 fixedConfigs2 FIXEDCONF2 = {
 		EGOMinimum:    LC1LambdaMin,
 		EGORange:      LC1LambdaRange,
 #endif
+
 #if CONFIG == HOTEL_ID
 		BRVMinimum:    VOLTS(0),
 		BRVRange:      VOLTS(25.082),
@@ -147,11 +152,15 @@ const volatile fixedConfig2 fixedConfigs2 FIXEDCONF2 = {
 		dwellType:     DWELL_RPM,
 #elif CONFIG == SEANKLT1_ID
 		dwellType:     DWELL_FIXED,
+#elif CONFIG == MOAR_ID
+		dwellType:     DWELL_FIXED,
 #else
 		dwellType:     DWELL_BRV,
 #endif
 		padding:       0,
 #if CONFIG == SEANKLT1_ID
+		dwellFixedPeriod: T(2)
+#elif CONFIG == MOAR_ID
 		dwellFixedPeriod: T(2)
 #else
 		dwellFixedPeriod: T(3)
@@ -234,7 +243,7 @@ const volatile fixedConfig2 fixedConfigs2 FIXEDCONF2 = {
 		accelerationInputEventTimeTolerance: ACCEL_TIME_TOL(50),
 		decelerationInputEventTimeTolerance: DECEL_TIME_TOL(50),
 #endif
-		missingToothTolerance: 2048 // 2048 is 50% right now...
+		missingToothTolerance: 4096 // 2048 is 50% right now...
 	},
 	userTextField2: "Place your personal notes about whatever you like in here!"
 			" Don't hesitate to tell us a story about something interesting."

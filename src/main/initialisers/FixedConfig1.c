@@ -108,6 +108,14 @@ const volatile fixedConfig1 fixedConfigs1 FIXEDCONF1 = {
 		numberOfConfiguredOutputEvents:              8, // Migrated to new way
 		numberOfInjectionsPerEngineCycle:            2  // Used to be batch, dead time being wrong could have affected AFRs
 
+#elif CONFIG == MOAR_ID // Impregacy's lawnmower
+		anglesOfTDC:             {ANGLE(0), ANGLE(240)}, // Simple dual edge dizzy
+		outputEventPinNumbers:           {0},            // First pin
+		schedulingConfigurationBits:     {0},            // Ignition only
+		decoderEngineOffset:    ANGLE(83.00),            //
+		numberOfConfiguredOutputEvents:    1,            // One per decoder cycle = 4
+		numberOfInjectionsPerEngineCycle:  1             // Ditto
+
 #elif CONFIG == HOTEL_ID // Fred's Hotel Hyundai (Stellar) http://forum.diyefi.org/viewtopic.php?f=55&t=1086
 		anglesOfTDC:             {ANGLE(0)}, // Simple dual edge dizzy
 		outputEventPinNumbers:          {0}, // First pin
@@ -136,7 +144,7 @@ const volatile fixedConfig1 fixedConfigs1 FIXEDCONF1 = {
 		anglesOfTDC: {ANGLE(0), ANGLE(180), ANGLE(360), ANGLE(540), ANGLE(0), ANGLE(180), ANGLE(360), ANGLE(540)}, // 1,2,3,4: Firing order: 1-3-4-2 set up in loom
 		outputEventPinNumbers:           {0,1,2,3,4,5,4,5}, // COP/CNP ignition, semi-sequential fuel
 		schedulingConfigurationBits:     {0,0,0,0,1,1,1,1}, // First four ignition, last four fuel
-		decoderEngineOffset:         ANGLE(566.00), // Volvo B21A with DSM/Miata CAS + 24and1 disk
+		decoderEngineOffset:         ANGLE(482.00), // Volvo B21A with DSM/Miata CAS + 24and1 disk
 		numberOfConfiguredOutputEvents:                  8, // COP PT2-PT5, injectors drivers wired to PT6 and PT7, pulse-paired, until Xgate
 		numberOfInjectionsPerEngineCycle:                2  // Syncronized semi-sequential
 
@@ -228,6 +236,9 @@ const volatile fixedConfig1 fixedConfigs1 FIXEDCONF1 = {
 #if CONFIG == HOTEL_ID
 			disableThreshold:  RPM(5800),
 			reenableThreshold: RPM(5700) // Nice and close to save the exhaust
+#elif CONFIG == MOAR_ID
+			disableThreshold:  RPM(5000),
+			reenableThreshold: RPM(4900)
 #elif CONFIG == SNOTROCKET_ID
 			disableThreshold:  RPM(6300),
 			reenableThreshold: RPM(6150)

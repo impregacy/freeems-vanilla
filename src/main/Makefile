@@ -515,6 +515,7 @@ EvenTeeth-Cam-16and1: $(S19DIR)/$(LABEL)-EvenTeeth-Cam-16and1.s19
 EvenTeeth-Cam-6and1:  $(S19DIR)/$(LABEL)-EvenTeeth-Cam-6and1.s19
 EvenTeeth-Cam-4and1:  $(S19DIR)/$(LABEL)-EvenTeeth-Cam-4and1.s19
 MissingTeeth-Crank-8minus1:  $(S19DIR)/$(LABEL)-MissingTeeth-Crank-8minus1.s19
+MissingTeeth-Crank-18minus2:  $(S19DIR)/$(LABEL)-MissingTeeth-Crank-18minus2.s19
 MissingTeeth-Crank-12minus1: $(S19DIR)/$(LABEL)-MissingTeeth-Crank-12minus1.s19
 MissingTeeth-Cam-12minus1:   $(S19DIR)/$(LABEL)-MissingTeeth-Cam-12minus1.s19
 HallOrOptical-Distributor-4of69: $(S19DIR)/$(LABEL)-HallOrOptical-Distributor-4of69.s19

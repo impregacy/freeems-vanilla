@@ -74,6 +74,8 @@ const volatile mainTable IgnitionAdvanceTableMainFlashV TIMETABLESD = {
 #include "../data/tables/axis/FredsTruck-RPM.h"
 #elif CONFIG == HOTEL_ID
 #include "../data/tables/axis/HotelHyundai-RPM.h"
+#elif CONFIG == MOAR_ID
+#include "../data/tables/axis/MOAR-RPM.h"
 #elif CONFIG == PRESTO_ID
 #include "../data/tables/axis/FredsTruck-RPM.h"
 #elif CONFIG == SEANKLT1_ID
@@ -133,6 +135,8 @@ const volatile mainTable IgnitionAdvanceTableMainFlashV TIMETABLESD = {
 #include "../data/tables/ign/FredsTruckIgnitionTiming.h"
 #elif CONFIG == HOTEL_ID
 #include "../data/tables/ign/HotelHyundaiIgnitionTiming.h"
+#elif CONFIG == MOAR_ID
+#include "../data/tables/ign/MOARIgnitionTiming.h"
 #elif CONFIG == PRESTO_ID
 #include "../data/tables/ign/flat15degrees.h"
 #elif CONFIG == SEANKLT1_ID
